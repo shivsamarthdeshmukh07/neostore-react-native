@@ -7,8 +7,8 @@ export default DrawerNavigator=()=>{
     const Drawer = createDrawerNavigator()
 
     return(
-        <Drawer.Navigator>
-            <Drawer.Screen name='home' component={tabNavigator}/>
+        <Drawer.Navigator screenOptions={{headerShown:false}}>
+            <Drawer.Screen  name='avb' component={tabNavigator}/>
         </Drawer.Navigator>
     )
 }

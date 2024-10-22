@@ -162,6 +162,36 @@ passwordChangeButton:{
    marginTop:heightScale(30)
 },
 
+
+
+// home page 
+homePageContainer:{
+  flex:1,
+  marginHorizontal:widthScale(31.5),
+},
+
+
+// carousel images
+// carouselImages:{
+// width:325,
+// height:150,
+// borderRadius:5,
+// borderWidth:2,
+// borderColor:"green",
+// margin:12,
+// resizeMode:'cover',
+// backgroundColor:'red'
+// }
+
+carouselImages: {
+  width: '100%',
+  height: 175,
+  borderRadius:20,
+
+
+overflow:'hidden',
+  resizeMode: 'stretch', 
+},
 })
 
 

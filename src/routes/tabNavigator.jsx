@@ -9,9 +9,11 @@ export default TabNavigator=()=>{
     Tab = createBottomTabNavigator();
 
     return(
-        <Tab.Navigator initialRouteName='home'>
-            <Tab.Screen name="home"  component={home}/>
-            <Tab.Screen name="order"  component={order}/>
+        <Tab.Navigator initialRouteName='home'
+         options={{headerShown:false}}
+         >
+            <Tab.Screen options={{headerShown:false}} name="home" component={home}/>
+            <Tab.Screen options={{headerShown:false}} name="order"  component={order}/>
 
         </Tab.Navigator>
     )

@@ -30,31 +30,35 @@ export default Register = ({ navigation }) => {
   const [female, setFemale] = useState(false);
 
   const registerUser = async (data) => {
-    
+    console.log('data----',data)
+    try {
       let result = await fetch(
         'http://staging.php-dev.in:8844/trainingapp/api/users/register',
-        
         {
-          method:'POST',
-          body:data,
+          method: 'POST',
+          body: data,
           headers: {
-'Accept': 'application/json',
-'Content-type':'application/json'
-          },
-        },
-      ).then(response=>console.log(response))
-      .catch(e=>console.log(e))
+            'Accept': 'application/json',
 
-// let result= await axios.post('http://staging.php-dev.in:8844/trainingapp/api/users/register',
-//   data,
-//   {
-//     headers:{
-//       'Content-Type': 'multipart/form-data'
-//     }
-//   }
-// ).then(resp => console.log(resp)).catch(e=>console.log(e))
-    
- };
+          },
+        }
+      );
+  
+      if (!result.ok) {
+        // Handle HTTP errors (non-2xx responses)
+        throw new Error(`HTTP error! status: ${result.status}`);
+      }
+  
+      let responseData = await result.json();
+      console.log('Response Data:', responseData);
+      return responseData;
+  
+    } catch (error) {
+      // Catch both fetch and JSON parsing errorscd 
+      console.error('Error occurred:', error);
+    }
+  };
+  
 
   const namePattern = /[a-zA-Z]{3,}/;
   const emailPattern = /[a-zA-Z0-9\.\-_]+[@]+[a-z]+[\.]+[a-z]{2,3}/;
@@ -189,7 +193,7 @@ export default Register = ({ navigation }) => {
           <Text style={{color:"white", alignSelf:"center", fontFamily:"Poppins-Bold", fontSize:fontScale(16)}}>Register</Text>
         </Pressable>
 
-        <Text style={{marginHorizontal:widthScale(109), paddingTop:heightScale(25)}}>or sign up with</Text>
+        <Text style={{marginHorizontal:widthScale(108), paddingTop:heightScale(25)}}>or sign up with</Text>
 
         <View style={{width: widthScale(166), height:heightScale(42), flexDirection:"row", justifyContent:"space-around", marginHorizontal:widthScale(75), marginTop:heightScale(15)}}>
           <Image style={{width:widthScale(25), height:heightScale(25), borderRadius:15}} source={require('../../assets/images/apple-logo.png')} />
