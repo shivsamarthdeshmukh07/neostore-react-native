@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -21,6 +21,8 @@ import {
     configureReanimatedLogger,
     ReanimatedLogLevel,
   } from 'react-native-reanimated';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser } from '../../redux/neoSlice';
   
   // This is the default configuration
   configureReanimatedLogger({
@@ -30,24 +32,21 @@ import {
 
 const menu = <Icon name={'menu'} size={25}  />;
 const wishlistIcon = <Icon name={'heart'} size={25} />;
-const tableIcon = <Icon2 name={'table-furniture'} size={25} color={"gray"}/>;
-const chairIcon = <Icon2 name={'chair-rolling'} size={25} color={"gray"}  />;
-const bedIcon = <Icon2 name={'bed-empty'} size={25} color={"gray"}/>;
-const sofaIcon = <Icon2 name={'sofa'} size={25} color={"gray"} />;
-
-// const images = [
-//     require('../../assets/images/c1.png')
-//     // require('../../assets/images/c1.png'),
-//     // require('../../assets/images/c2.jpg'),
-//     // require('../../assets/images/c3.png'),
-//     // require('../../assets/images/c4.jpg'),
-//     // require('../../assets/images/c5.png'),
-//   ];
 
 
 
-console.warn = () => {}
-const IconView = ({icon, name,productId}) => {
+const images = [
+    require('../../assets/images/carousel/c1.jpg'),
+    require('../../assets/images/carousel/c2.jpg'),
+    require('../../assets/images/carousel/c3.png'),
+    require('../../assets/images/carousel/c4.jpg'),
+    require('../../assets/images/carousel/c5.png'),
+  ];
+
+
+
+
+const IconView =memo( ({icon, name,productId=1,iconfocus}) => {
     
       let id;
       if(name==="table"){
@@ -59,10 +58,17 @@ const IconView = ({icon, name,productId}) => {
       }else{
         id=4
       }
-    
+    const [focus,setFocus] = useState(false)
+   
   return (
     <TouchableWithoutFeedback
       onPress={()=>productId(id)}
+      onPressIn={()=>{setFocus(true)
+        iconfocus(true)
+      }}
+      onPressOut={()=>{setFocus(false)
+        iconfocus(false)
+      }}
       style={{alignItems: 'center'}}>
       <View
         style={{
@@ -72,7 +78,8 @@ const IconView = ({icon, name,productId}) => {
           justifyContent: 'center',
           alignItems: 'center',
           borderRadius: 25,
-          borderColor: 'gray',
+          borderColor: focus?"white":'gray',
+          backgroundColor: focus?"black":'white'
         }}>
         <View
           style={{
@@ -82,7 +89,9 @@ const IconView = ({icon, name,productId}) => {
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 20,
-            borderColor: 'gray',
+            borderColor: focus?"white":'gray',
+          backgroundColor: focus?"black":'white'
+
           }}>
           {icon}
         </View>
@@ -90,22 +99,52 @@ const IconView = ({icon, name,productId}) => {
       <Text>{name}</Text>
     </TouchableWithoutFeedback>
   );
-};
+});
 export default Home = ({navigation}) => {
+  const data = useSelector(state => state.neoStore.userData)
+  const dispatch = useDispatch()
+  console.log("hiiiiiii",data)
+
+  const [table, setTable] = useState(false);
+  const [chair, setChair] = useState(false);
+  const [sofa, setSofa] = useState(false);
+  const [bed, setBed] = useState(false);
+  const tableIcon = <Icon2 name={'table-furniture'} size={25} color={table?"white":"gray"}/>;
+const chairIcon = <Icon2 name={'chair-rolling'} size={25} color={chair?"white":"gray"}  />;
+const bedIcon = <Icon2 name={'bed-empty'} size={25} color={bed?"white":"gray"}/>;
+const sofaIcon = <Icon2 name={'sofa'} size={25} color={sofa?"white":"gray"} />;
  
     const fetchData = async () => {
-        await axios({
-          method: 'GET',
-          url: `http://staging.php-dev.in:8844/trainingapp/api/products/getList?product_category_id=${productId}`,
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      await axios({
+        method: 'GET',
+        url: `http://staging.php-dev.in:8844/trainingapp/api/products/getList?product_category_id=${productId}`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(res =>{ setData(res.data.data)
+          fetch=false
         })
-          .then(res =>{ setData(res.data.data)
-            fetch=false
-          })
-          .catch(e => console.log('error--', e));
-      };
+        .catch(e => console.log('error--', e));
+    }
+    //  console.log('token',data.data.access_token)
+    const getuserData = useCallback(async () => {
+      await axios({
+        method: 'GET',
+        url: 'http://staging.php-dev.in:8844/trainingapp/api/users/getUserData',
+        
+        headers: {
+          'Content-Type': 'application/json',
+          access_token:data.data.access_token
+        },
+      })
+        .then(res =>dispatch(addUser(res.data.data)))
+        .catch(e => console.log('get data error',data.data.access_token));
+    })
+
+
+
+    
     
  
 
@@ -113,18 +152,16 @@ export default Home = ({navigation}) => {
     const [datas,setData]=useState([])
     useEffect(()=>{fetchData()
     },[productId])
+    useEffect(()=>{getuserData()},[])
 
    
-  const [table, setTable] = useState(true);
-  const [chair, setChair] = useState(false);
-  const [sofa, setSofa] = useState(false);
-  const [bed, setBed] = useState(false);
+  
 
 
 console.log("datttttttt",datas)
   return (
    <SafeAreaView style={globalStyles.homePageContainer}>
-   <ScrollView scrollB>
+   <ScrollView showsVerticalScrollIndicator={false}>
  <View
    style={{
      flexDirection: 'row',
@@ -142,28 +179,36 @@ console.log("datttttttt",datas)
      justifyContent: 'space-between',
      marginBottom: heightScale(30),
    }}>
-   <IconView icon={tableIcon} name={'table'} productId={setProductId} />
-   <IconView icon={chairIcon} name={'chair'} productId={setProductId} />
-   <IconView icon={bedIcon} name={'bed'} productId={setProductId}/>
-   <IconView icon={sofaIcon} name={'sofa'} productId={setProductId}/>
+   <IconView icon={tableIcon} name={'table'} productId={setProductId} iconfocus={setTable} />
+   <IconView icon={chairIcon} name={'chair'} productId={setProductId}  iconfocus={setChair}/>
+   <IconView icon={bedIcon} name={'bed'} productId={setProductId}  iconfocus={setBed}/>
+   <IconView icon={sofaIcon} name={'sofa'} productId={setProductId}  iconfocus={setSofa}/>
  </View>
 
- <Carousal />
+ <Carousal images={images} carouselheight={175} paginationheight={150}/>
 
  <View style={{flexDirection:"row",justifyContent:"space-between",marginTop:heightScale(15),marginBottom:heightScale(20)}}>
  <Text style={{fontSize:20,fontWeight:'500',}} >Feature Product</Text>
- <Text style={{fontSize:14,fontWeight:'100',marginTop:heightScale(5)}} >show all</Text>
+ <Pressable
+   onPress={()=>navigation.navigate("gallery",{productId})}
+ >
+ <Text style={{fontSize:14,fontWeight:'200',marginTop:heightScale(5)}} >show all</Text>
+
+ </Pressable>
  </View>
  <FlatList
  ItemSeparatorComponent={<View style={{height:20,width:20}}/>}
+
    horizontal={true}
    data={datas}
-   renderItem={({item}) => <View style={{height:heightScale(208),width:widthScale(157)}}>
+   renderItem={({item}) => <Pressable 
+      onPress={()=>navigation.navigate("details",{id:item.id})}
+   style={{height:heightScale(208),width:widthScale(157)}}>
              <Image style={{height:heightScale(149),width:widthScale(141),resizeMode:'stretch',alignSelf:"center"}} source={{uri:`${item.product_images}`}}/> 
-             <Text style={{marginLeft:widthScale(7),marginTop:heightScale(8),fontSize:fontScale(14)}}>{item.name}</Text> 
-             <Text style={{marginLeft:widthScale(7),marginTop:heightScale(8),fontWeight:"800"}}>${item.cost}</Text> 
+             <Text numberOfLines={1} style={{marginLeft:widthScale(7),marginTop:heightScale(8),fontSize:fontScale(14)}}>{item.name}</Text> 
+             <Text  style={{marginLeft:widthScale(7),marginTop:heightScale(8),fontWeight:"800"}}>${item.cost}</Text> 
 
-   </View>}
+   </Pressable>}
  />
  <Image style={{height:heightScale(142),width:widthScale(335),resizeMode:"stretch",marginTop:heightScale(15)}} source={require('../../assets/images/Banner.png')}/>
  </ScrollView>

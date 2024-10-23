@@ -168,6 +168,7 @@ passwordChangeButton:{
 homePageContainer:{
   flex:1,
   marginHorizontal:widthScale(31.5),
+  paddingTop:Platform.OS==='ios'?0:20
 },
 
 
@@ -183,15 +184,7 @@ homePageContainer:{
 // backgroundColor:'red'
 // }
 
-carouselImages: {
-  width: '100%',
-  height: 175,
-  borderRadius:20,
 
-
-overflow:'hidden',
-  resizeMode: 'stretch', 
-},
 })
 
 

@@ -12,6 +12,11 @@ import Home from '../screens/main/home';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import tabNavigator from './tabNavigator';
 import DrawerNavigator from './drawerNavigator';
+import Gallery from '../screens/gallery';
+import detail from '../screens/main/detail';
+
+
+
 
 
 
@@ -28,10 +33,16 @@ export default Routes=()=>{
                   <Stack.Screen options={{headerShown:false}} name='forgotPassword' component={ForgotPassword}/>
                   <Stack.Screen options={{headerShown:false}} name='verificationCode' component={VerificationCode}/>
                   <Stack.Screen options={{headerShown:false}} name='newPassword' component={NewPassword}/>
+                  <Stack.Screen options={{headerShown:false}} name='gallery' component={Gallery}/>
+                  <Stack.Screen options={{headerShown:false}} name='details' component={detail}/>
+
                  
                   <Stack.Screen options={{headerShown:false}} name='passwordChangeModal' component={PasswordChangeModal}/>
                   <Stack.Screen options={{headerShown:false}} name='home' component={DrawerNavigator}/>
-                  
+
+
+
+
             </Stack.Navigator>
             
         </NavigationContainer>

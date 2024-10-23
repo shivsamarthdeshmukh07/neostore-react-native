@@ -16,12 +16,12 @@ import home from '../screens/main/home';
 //   require('../assets/images/carousel/c5.png'),
 // ];
 
-export default CarousalComp=({images,carouselheight,paginationheight,detail})=>{
+export default DetailCarousal=({images,carouselheight,paginationheight})=>{
 
   const [currentIndex, setCurrentIndex] = useState(0);
   
     return(
-      <View style={{ height:heightScale(carouselheight), }}>
+      <View style={{ height:heightScale(carouselheight),marginTop:heightScale(30)}}>
       <Carousel
           width={325}
           height={carouselheight} 
@@ -31,9 +31,10 @@ export default CarousalComp=({images,carouselheight,paginationheight,detail})=>{
           data={images}
           onSnapToItem={(index)=>setCurrentIndex(index)}
           renderItem={({ item }) => (
+            
            <Image
                   style={[styles.carouselImages,{height:carouselheight}]}
-                  source={item}
+                  source={{uri:item.image}}
               />
           )}
       />
@@ -55,7 +56,7 @@ export default CarousalComp=({images,carouselheight,paginationheight,detail})=>{
 const styles = StyleSheet.create({
   pagination: {
       position: 'absolute',
-     marginLeft:130,
+     marginLeft:145,
      
       transform: [{ translateX: -15 }], // Center dots
       flexDirection: 'row',
@@ -67,18 +68,18 @@ const styles = StyleSheet.create({
       margin: 4,
   },
   activeDot: {
-      backgroundColor: 'white', // Change to your preferred color
+      backgroundColor: 'black', // Change to your preferred color
   },
   inactiveDot: {
       backgroundColor: 'gray', // Change to your preferred color
   },
   carouselImages: {
-    width: '100%',
+    width: '99%',
    
     borderRadius:20,
   
   
   overflow:'hidden',
-    resizeMode: 'stretch', 
+    resizeMode: "stretch", 
   },
 });
