@@ -13,7 +13,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		16693B58E25BAC2DAF866464 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3BB90461A18DEE7673E8AE02 /* PrivacyInfo.xcprivacy */; };
-		3F025342E42A260DA35E0820 /* libPods-NeoStore-NeoStoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E15FE8F2C74CEB41AE8A848 /* libPods-NeoStore-NeoStoreTests.a */; };
+		232E94A5F4211213E547564D /* libPods-NeoStore-NeoStoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8790F20D1D8F90168FE02684 /* libPods-NeoStore-NeoStoreTests.a */; };
+		38A9989F7C1FA6CBB68437F0 /* libPods-NeoStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 244D1C0691750E48B02305F5 /* libPods-NeoStore.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		92EF423E2CB56158005A3021 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92EF422B2CB56156005A3021 /* Fontisto.ttf */; };
 		92EF423F2CB56158005A3021 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92EF422C2CB56156005A3021 /* Octicons.ttf */; };
@@ -39,7 +40,6 @@
 		A0A9A9EEDE3544A6ABD54308 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33F9E83EA6EA47BD94BC7A4A /* Poppins-Regular.ttf */; };
 		D3A572D5C59D43258C8E2696 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD145586C5CD4993B596BF5B /* Poppins-SemiBold.ttf */; };
 		D8BF2121A2034B648C01D3F4 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 738841438E29475FB28548E1 /* Poppins-Light.ttf */; };
-		FEB414DA2AB05706176E7D63 /* libPods-NeoStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B1AF4E5685263FCF328D24 /* libPods-NeoStore.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,16 +63,16 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NeoStore/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NeoStore/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = NeoStore/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		18B1AF4E5685263FCF328D24 /* libPods-NeoStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeoStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E15FE8F2C74CEB41AE8A848 /* libPods-NeoStore-NeoStoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeoStore-NeoStoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		244D1C0691750E48B02305F5 /* libPods-NeoStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeoStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		268D756C280F822C729F0DA5 /* Pods-NeoStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoStore.debug.xcconfig"; path = "Target Support Files/Pods-NeoStore/Pods-NeoStore.debug.xcconfig"; sourceTree = "<group>"; };
 		2E152E1CBF874BE3B51786A5 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		33F9E83EA6EA47BD94BC7A4A /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		3BB90461A18DEE7673E8AE02 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = NeoStore/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		3C228258D99A4EA68EFDA8AD /* Pods-NeoStore-NeoStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoStore-NeoStoreTests.release.xcconfig"; path = "Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests.release.xcconfig"; sourceTree = "<group>"; };
-		4CB5AA830928815F3BF90BD4 /* Pods-NeoStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoStore.release.xcconfig"; path = "Target Support Files/Pods-NeoStore/Pods-NeoStore.release.xcconfig"; sourceTree = "<group>"; };
 		738841438E29475FB28548E1 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
+		7620BFC2D4167A3444ECB5FC /* Pods-NeoStore-NeoStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoStore-NeoStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A6635B1867D4DAD9D3E106E /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NeoStore/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8790F20D1D8F90168FE02684 /* libPods-NeoStore-NeoStoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeoStore-NeoStoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EF422B2CB56156005A3021 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		92EF422C2CB56156005A3021 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		92EF422D2CB56156005A3021 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 		92EF423C2CB56156005A3021 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		92EF423D2CB56156005A3021 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		AD145586C5CD4993B596BF5B /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		DAB30D75E3D5241AE647429F /* Pods-NeoStore-NeoStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoStore-NeoStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DC28FD243A546637C93E0BB5 /* Pods-NeoStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoStore.debug.xcconfig"; path = "Target Support Files/Pods-NeoStore/Pods-NeoStore.debug.xcconfig"; sourceTree = "<group>"; };
+		E181B9D2CFE2AA913F2D1B61 /* Pods-NeoStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoStore.release.xcconfig"; path = "Target Support Files/Pods-NeoStore/Pods-NeoStore.release.xcconfig"; sourceTree = "<group>"; };
+		E2583D448990C57EBAFABB53 /* Pods-NeoStore-NeoStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoStore-NeoStoreTests.release.xcconfig"; path = "Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4805E9B4FB949219E5179E5 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F025342E42A260DA35E0820 /* libPods-NeoStore-NeoStoreTests.a in Frameworks */,
+				232E94A5F4211213E547564D /* libPods-NeoStore-NeoStoreTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB414DA2AB05706176E7D63 /* libPods-NeoStore.a in Frameworks */,
+				38A9989F7C1FA6CBB68437F0 /* libPods-NeoStore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				18B1AF4E5685263FCF328D24 /* libPods-NeoStore.a */,
-				1E15FE8F2C74CEB41AE8A848 /* libPods-NeoStore-NeoStoreTests.a */,
+				244D1C0691750E48B02305F5 /* libPods-NeoStore.a */,
+				8790F20D1D8F90168FE02684 /* libPods-NeoStore-NeoStoreTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,10 +223,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DC28FD243A546637C93E0BB5 /* Pods-NeoStore.debug.xcconfig */,
-				4CB5AA830928815F3BF90BD4 /* Pods-NeoStore.release.xcconfig */,
-				DAB30D75E3D5241AE647429F /* Pods-NeoStore-NeoStoreTests.debug.xcconfig */,
-				3C228258D99A4EA68EFDA8AD /* Pods-NeoStore-NeoStoreTests.release.xcconfig */,
+				268D756C280F822C729F0DA5 /* Pods-NeoStore.debug.xcconfig */,
+				E181B9D2CFE2AA913F2D1B61 /* Pods-NeoStore.release.xcconfig */,
+				7620BFC2D4167A3444ECB5FC /* Pods-NeoStore-NeoStoreTests.debug.xcconfig */,
+				E2583D448990C57EBAFABB53 /* Pods-NeoStore-NeoStoreTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -251,12 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NeoStoreTests" */;
 			buildPhases = (
-				C69B7080C7E19618E1A672B5 /* [CP] Check Pods Manifest.lock */,
+				A3E7CF267C5D3ED8FA8F2FBD /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				A4E52C97B3B0485E38DE9895 /* [CP] Embed Pods Frameworks */,
-				BCCEB1B1151EADE3C6345343 /* [CP] Copy Pods Resources */,
+				EFC0F15333299806F789AA67 /* [CP] Embed Pods Frameworks */,
+				D54482AE88A81C1DC75E3F24 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,13 +272,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NeoStore" */;
 			buildPhases = (
-				12568FC95F2FC4D78898D7FC /* [CP] Check Pods Manifest.lock */,
+				96E73BBF00407F088E902A84 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				A6CF7F127FB3A981381EF6F4 /* [CP] Embed Pods Frameworks */,
-				01C163FF457FA5B905056D6E /* [CP] Copy Pods Resources */,
+				C75E7F33B424F10BE41C3E06 /* [CP] Embed Pods Frameworks */,
+				16EA2965DCA79BF9D47F48C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -387,7 +387,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		01C163FF457FA5B905056D6E /* [CP] Copy Pods Resources */ = {
+		16EA2965DCA79BF9D47F48C9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -404,7 +404,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeoStore/Pods-NeoStore-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		12568FC95F2FC4D78898D7FC /* [CP] Check Pods Manifest.lock */ = {
+		96E73BBF00407F088E902A84 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -426,58 +426,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4E52C97B3B0485E38DE9895 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6CF7F127FB3A981381EF6F4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NeoStore/Pods-NeoStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NeoStore/Pods-NeoStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeoStore/Pods-NeoStore-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BCCEB1B1151EADE3C6345343 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C69B7080C7E19618E1A672B5 /* [CP] Check Pods Manifest.lock */ = {
+		A3E7CF267C5D3ED8FA8F2FBD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -497,6 +446,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C75E7F33B424F10BE41C3E06 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeoStore/Pods-NeoStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeoStore/Pods-NeoStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeoStore/Pods-NeoStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D54482AE88A81C1DC75E3F24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFC0F15333299806F789AA67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeoStore-NeoStoreTests/Pods-NeoStore-NeoStoreTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -532,7 +532,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAB30D75E3D5241AE647429F /* Pods-NeoStore-NeoStoreTests.debug.xcconfig */;
+			baseConfigurationReference = 7620BFC2D4167A3444ECB5FC /* Pods-NeoStore-NeoStoreTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -559,7 +559,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C228258D99A4EA68EFDA8AD /* Pods-NeoStore-NeoStoreTests.release.xcconfig */;
+			baseConfigurationReference = E2583D448990C57EBAFABB53 /* Pods-NeoStore-NeoStoreTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -583,7 +583,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC28FD243A546637C93E0BB5 /* Pods-NeoStore.debug.xcconfig */;
+			baseConfigurationReference = 268D756C280F822C729F0DA5 /* Pods-NeoStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -610,7 +610,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CB5AA830928815F3BF90BD4 /* Pods-NeoStore.release.xcconfig */;
+			baseConfigurationReference = E181B9D2CFE2AA913F2D1B61 /* Pods-NeoStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

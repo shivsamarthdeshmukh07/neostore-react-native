@@ -161,20 +161,23 @@ const sofaIcon = <Icon2 name={'sofa'} size={25} color={sofa?"white":"gray"} />;
 console.log("datttttttt",datas)
   return (
    <SafeAreaView style={globalStyles.homePageContainer}>
-   <ScrollView showsVerticalScrollIndicator={false}>
- <View
+    <View
    style={{
+    height:25,
      flexDirection: 'row',
      justifyContent: 'space-between',
-     marginBottom: heightScale(30),
+     marginBottom: heightScale(15),
    }}>
    <Pressable onPress={() => navigation.openDrawer()}>{menu}</Pressable>
    <Text style={{fontSize: 20, fontWeight: 'bold'}}>NeoStoe</Text>
    {wishlistIcon}
  </View>
+   <ScrollView showsVerticalScrollIndicator={false}>
+ 
 
  <View
    style={{
+    marginTop:heightScale(15),
      flexDirection: 'row',
      justifyContent: 'space-between',
      marginBottom: heightScale(30),
@@ -198,7 +201,7 @@ console.log("datttttttt",datas)
  </View>
  <FlatList
  ItemSeparatorComponent={<View style={{height:20,width:20}}/>}
-
+  showsHorizontalScrollIndicator={false}
    horizontal={true}
    data={datas}
    renderItem={({item}) => <Pressable 

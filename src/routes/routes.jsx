@@ -14,6 +14,10 @@ import tabNavigator from './tabNavigator';
 import DrawerNavigator from './drawerNavigator';
 import Gallery from '../screens/gallery';
 import detail from '../screens/main/detail';
+import search from '../screens/main/search';
+import address from '../screens/main/address';
+import deliveryAddress from '../screens/main/deliveryAddress';
+import checkout from '../screens/main/checkout';
 
 
 
@@ -35,8 +39,10 @@ export default Routes=()=>{
                   <Stack.Screen options={{headerShown:false}} name='newPassword' component={NewPassword}/>
                   <Stack.Screen options={{headerShown:false}} name='gallery' component={Gallery}/>
                   <Stack.Screen options={{headerShown:false}} name='details' component={detail}/>
-
-                 
+                  <Stack.Screen options={{headerShown:false}} name='search' component={search}/>
+                  <Stack.Screen options={{headerShown:false}} name='address' component={address}/>
+                  <Stack.Screen options={{headerShown:false}} name='deliveryAddress' component={deliveryAddress}/>
+                  <Stack.Screen options={{headerShown:false}} name='checkout' component={checkout}/>
                   <Stack.Screen options={{headerShown:false}} name='passwordChangeModal' component={PasswordChangeModal}/>
                   <Stack.Screen options={{headerShown:false}} name='home' component={DrawerNavigator}/>
 

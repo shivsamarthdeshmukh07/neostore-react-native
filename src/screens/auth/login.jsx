@@ -5,6 +5,7 @@ import { fontScale, heightScale, widthScale } from '../../assets/constants/metri
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../../redux/neoSlice'
+import InputField from '../../components/inputField'
 
 
 export default Login = ({navigation}) => {
@@ -65,28 +66,7 @@ export default Login = ({navigation}) => {
 
 
     console.log("rrrrrrrr",result)
-    // async function handleSubmit() {
-    
-    //   const formData = new FormData()
-    //   formData.append('email', email)
-    //   formData.append('password', password)
-    //   // console.log(data)
-    //   try {
-    //   const result = await axios.post(
-    //     'http://staging.php-dev.in:8844/trainingapp/api/users/login', 
-    //     FormData , 
-    //     {
-    //       headers:{
-    //         'Content-Type' : 'multipart/form-data'
-    //       }
-    //     }
-    //   )
-    //   console.log(result?.data)
-    // } catch (error) {
-    //   console.log(error)
-    // }
-  
-    // }
+   
 
     
     return(
@@ -96,11 +76,10 @@ export default Login = ({navigation}) => {
              <View style={{height:heightScale(70)}}>
 
              </View>
-        <InputField placeHolder={'Email address'} getDataFromChild={handleEmailChange} value={"hiii@wek.kj"} />
-            
-             {emailErr ? <Text>{emailErr}</Text> : null}
-             <InputField placeHolder={'Password'} icon={"lock"} getDataFromChild={handlePasswordChange} value={"Q@111111"} />
+             <InputField placeHolder={'Email address'} getDataFromChild={handleEmailChange} value={email} />
+        {emailErr ? <Text>{emailErr}</Text> : null}
 
+        <InputField placeHolder={'Password'} icon={"lock"} getDataFromChild={handlePasswordChange} value={password} />
         {passwordErr ? <Text>{passwordErr}</Text> : null}
 
              <TouchableOpacity style={{alignItems:"flex-end",marginTop:heightScale(20)}}><Text>Forgot Password?</Text></TouchableOpacity>

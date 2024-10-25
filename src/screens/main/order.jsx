@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 
 export default Order=()=>{
 return(
-    <Text>Order</Text>
+    <Text>Profile</Text>
 )
 
 }

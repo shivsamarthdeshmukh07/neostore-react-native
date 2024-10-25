@@ -2,7 +2,8 @@ import { createSlice,nanoid } from '@reduxjs/toolkit'
 
 const initialState={
     userData:{},
-    address:[]
+    address:[],
+    orderAddress:[]
 }
 
 const neoSlice = createSlice({
@@ -19,15 +20,18 @@ const neoSlice = createSlice({
             state.userData={}
         },
         addAdress:(state=initialState,action)=>{
-            state.address.push({id:nanoid ,...action.payload})
+            state.address.push({id:nanoid() ,...action.payload})
         },
         updateAddress:(state=initialState,action)=>{
-            state.address.map((add)=>add.id == action.payload.id ? {...action.payload}:add)
+            state.address= state.address.map((add)=>add.id == action.payload.id ? {...action.payload}:add)
         },
 
         deleteAddress:(state=initialState,action)=>{
-            state.address.filter((add)=>add.id != action.payload.id ?add:null)
+          
+            state.address= state.address.filter((add)=>add.id != action.payload ?add:null)
+           
         },
+
     }
 })
 

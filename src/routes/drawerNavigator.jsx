@@ -16,18 +16,22 @@ import { useSelector } from 'react-redux'
 export default DrawerNavigator=()=>{
     const Drawer = createDrawerNavigator()
     const data = useSelector(state=>state.neoStore.userData)
-       console.log(data.user_data)
+      //  console.log(data.user_data)
+      console.log(data.user_data?.profile_pic)
     return(
         <Drawer.Navigator screenOptions={{headerShown:false,drawerStyle:{width:widthScale(293)}}}
         
         drawerContent={props =>(
             <DrawerContentScrollView {...props}>
                  <View style={{width:widthScale(225),height:heightScale(70),marginLeft:widthScale(30),marginTop:heightScale(62),flexDirection:"row"}}>
-                    
-                     <Image style={{height:heightScale(70),width:widthScale(70),resizeMode:"stretch",borderRadius:40,marginRight:widthScale(10)}} source={{uri:data.user_data.profile_pic}}/>
+                    {data.user_data?.profile_pic?
+                     <Image style={{height:heightScale(70),width:widthScale(70),resizeMode:"stretch",borderRadius:40,marginRight:widthScale(10)}} source={{uri:data.user_data?.profile_pic}}/>:
+                     <Image style={{height:heightScale(70),width:widthScale(70),resizeMode:"stretch",borderRadius:40,marginRight:widthScale(10)}} source={require('../assets/images/user1.png')}/>
+                      
+                  }
                       <View style={{justifyContent:"space-evenly"}}>
-                        <Text numberOfLines={2} style={{width:widthScale(140),fontSize:fontScale(16),fontWeight:"700"}}>{data.user_data.first_name} {data.user_data.first_name}</Text>
-                        <Text style={{fontSize:fontScale(14),fontWeight:"500"}}>{data.user_data.email}</Text>
+                        <Text numberOfLines={2} style={{width:widthScale(140),fontSize:fontScale(16),fontWeight:"700"}}>{data.user_data?.first_name} {data.user_data?.last_name}</Text>
+                        <Text style={{fontSize:fontScale(14),fontWeight:"500"}}>{data.user_data?.email}</Text>
 
                       </View>
 
@@ -51,7 +55,7 @@ export default DrawerNavigator=()=>{
                  )}
                  style={{width:widthScale(293),height:heightScale(45),paddingLeft:widthScale(18),}}
                  label={"Discover"}
-                 onPress={()=>props.navigation.navigate("Discover")}
+                 onPress={()=>props.navigation.navigate("search")}
                  />
 
                   <DrawerItem
@@ -74,7 +78,7 @@ export default DrawerNavigator=()=>{
                  )}
                  style={{width:widthScale(293),height:heightScale(45),paddingLeft:widthScale(18),}}
                  label={"My profile"}
-                 onPress={()=>props.navigation.navigate("My profile")}
+                 onPress={()=>props.navigation.navigate("profile")}
                  />
 
                  <Text style={{fontSize:14,marginTop:heightScale(20),marginLeft:widthScale(30)}}>Other</Text>
