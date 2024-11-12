@@ -1,7 +1,5 @@
 import React ,{useRef,useState} from 'react'
 import { Text, StyleSheet, View, Image} from 'react-native';
-import { SwiperFlatList } from 'react-native-swiper-flatlist';
-import globalStyles from '../assets/styles/styles';
 import { heightScale, widthScale } from '../assets/constants/metric';
 import Carousel from 'react-native-reanimated-carousel';
 import home from '../screens/main/home';
@@ -23,7 +21,7 @@ export default CarousalComp=({images,carouselheight,paginationheight,detail})=>{
     return(
       <View style={{ height:heightScale(carouselheight), }}>
       <Carousel
-          width={325}
+          width={widthScale(312)}
           height={carouselheight} 
           style={{borderRadius:20,}}
           autoPlay={false}

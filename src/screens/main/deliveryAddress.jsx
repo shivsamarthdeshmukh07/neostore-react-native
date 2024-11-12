@@ -17,11 +17,14 @@ export default DeliveryAddress = ({navigation})=>{
     return(
         <SafeAreaView>
              <View style={{flexDirection: 'row', justifyContent: 'space-between',marginHorizontal: widthScale(33),marginBottom:heightScale(50)}}>
-          <Pressable onPress={() => navigation.goBack('home')}>
+          <Pressable onPress={() => navigation.goBack()}>
             {back}
           </Pressable>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>Address</Text>
-          <Text>  </Text>
+          <Pressable onPress={() => navigation.navigate('address')}>
+          <Text style={{fontSize: 30, fontWeight: '500'}}>+</Text>
+            
+          </Pressable>
         </View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 

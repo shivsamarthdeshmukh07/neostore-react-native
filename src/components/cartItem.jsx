@@ -9,11 +9,11 @@ import axios from "axios";
 
 const cancelIcon = <Icon2 name={'highlight-remove'} size={25} color={"gray"}/>;
 
-export default CartItem=memo(({item,updateTotal})=>{
+export default CartItem=({item,updateTotal})=>{
     const userData = useSelector(state => state.neoStore.userData)
 
   const [quantity, setQuantity] = useState(item.quantity)
-  console.log("qqq",quantity);
+  console.log("qqq",item);
   
 
   const editCart = async (qty) => {
@@ -73,13 +73,13 @@ export default CartItem=memo(({item,updateTotal})=>{
 
 
     return(
-        <View style={{flexDirection:"row",width:widthScale(310),height:heightScale(99),marginTop:heightScale(30)}}>
+        <View style={{flexDirection:"row",width:widthScale(310),height:heightScale(99),marginTop:heightScale(30),backgroundColor:"#ffffff"}}>
                <Image style={{height:heightScale(97),width:widthScale(99),resizeMode:"stretch"}}
                  source={{uri:`${item?.product?.product_images}`}}
                />
                <View style={{paddingHorizontal:widthScale(10)}}>
                <View style={{flexDirection:"row",marginVertical:heightScale(15),width:widthScale(180),marginLeft:widthScale(10),justifyContent:"space-between"}}>
-                <Text style={{fontSize:fontScale(14),width:widthScale(100),}}>{item?.product?.name}</Text>
+                <Text style={{fontSize:fontScale(14),width:widthScale(100),color:"black"}}>{item?.product?.name}</Text>
                  <Pressable 
                  onPress={()=>{
                     handleDeletechange()
@@ -89,7 +89,7 @@ export default CartItem=memo(({item,updateTotal})=>{
                   </Pressable>                
                </View>
                <View style={{flexDirection:"row",marginLeft:widthScale(10),justifyContent:"space-between"}}>
-               <Text style={{fontSize:fontScale(16),fontWeight:"600"}}>${item?.product?.cost}</Text>
+               <Text style={{fontSize:fontScale(16),fontWeight:"600",color:"black"}}>${item?.product?.cost}</Text>
 
                <View style={{ flexDirection:'row',justifyContent:"space-around",height:heightScale(45),width:widthScale(100),borderRadius:15,}}>
     <Pressable style={{height:heightScale(25),width:widthScale(25),borderWidth:0.25,borderRadius:10,justifyContent:"center",alignItems:"center"}}
@@ -98,18 +98,18 @@ export default CartItem=memo(({item,updateTotal})=>{
     >
    
    
-    <Text style={{marginTop:-2,fontSize:fontScale(15)}}>-</Text>
+    <Text style={{marginTop:-2,fontSize:fontScale(15),color:"black"}}>-</Text>
     
 
     </Pressable>
     <View style={{height:heightScale(25),width:widthScale(25),borderWidth:0.25,borderRadius:10,justifyContent:"center",alignItems:"center"}}>
-    <Text>{quantity}</Text>
+    <Text style={{color:"black"}}>{quantity}</Text>
     </View>
     <Pressable style={{height:heightScale(25),width:widthScale(25),borderWidth:0.25,borderRadius:10,justifyContent:"center",alignItems:"center"}}
                      onPress={() => quantity < 8 && handleQuantityChange(1)}  // Increase quantity
 
     >
-    <Text style={{marginTop:-2,fontSize:fontScale(15)}}>+</Text>
+    <Text style={{marginTop:-2,fontSize:fontScale(15),color:"black"}}>+</Text>
     </Pressable>
 
 
@@ -118,4 +118,4 @@ export default CartItem=memo(({item,updateTotal})=>{
                </View>
               </View>
     )
-})
+}

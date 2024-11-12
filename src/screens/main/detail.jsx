@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Image, Pressable, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, Platform, Pressable, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Icon3 from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/Feather';
 import { fontScale, heightScale, widthScale } from "../../assets/constants/metric";
@@ -172,7 +172,7 @@ export default Details=({navigation,route})=>{
         </View>
       
       </ScrollView>
-      <View style={{flexDirection:"row",justifyContent:"space-evenly",height:heightScale(100),position:"absolute",paddingTop:heightScale(15),top:heightScale(720),width:widthScale(375),}}>
+      <View style={{flexDirection:"row",justifyContent:"space-evenly",height:heightScale(100),position:"absolute",paddingTop:heightScale(15),top:Platform.OS==='ios'? heightScale(720):heightScale(667),width:widthScale(375),}}>
       <View style={{ flexDirection:'row',justifyContent:"space-around",height:heightScale(45),width:widthScale(150),borderRadius:15,}}>
     <Pressable style={{height:heightScale(35),width:widthScale(35),borderWidth:0.25,borderRadius:12,justifyContent:"center",alignItems:"center"}}
     onPress={()=>{

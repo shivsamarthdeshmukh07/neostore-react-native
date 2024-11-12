@@ -12,7 +12,7 @@ import InputField from "../../components/inputField";
 const back = <Icon3 name={'chevron-back'} size={25} />;
 
 
-export default Address = ({route}) => {
+export default Address = ({route,navigation}) => {
         const data = route.params
      console.log("hiiiiii",route.params)
   const [house, setHouse] = useState(data?.houseNo);
@@ -33,7 +33,7 @@ export default Address = ({route}) => {
   const [pincode, setPincode] = useState(data?.pincode);
   const [pincodeErr, setPincodeErr] = useState('');
 
-  const [addType, setAddType] = useState(data.type);
+  const [addType, setAddType] = useState(data?.type);
   const [addTypeErr, setAddTypeErr] = useState('');
 
 
@@ -176,11 +176,11 @@ export default Address = ({route}) => {
             "pincode":pincode,
             "type":addType
           }
-          data.city?dispatch(updateAddress(addAdress)):dispatch(addAdress(addAdress))
+          data?.id?dispatch(updateAddress(address)):dispatch(addAdress(address))
         }
       }}
       >
-    <Text style={{fontSize:18,color:"white",fontWeight:"600"}}>Proceed to Checkout</Text>
+    <Text style={{fontSize:18,color:"white",fontWeight:"600"}}>Add Address</Text>
       </TouchableOpacity>
              
         </View>

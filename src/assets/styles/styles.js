@@ -168,7 +168,8 @@ passwordChangeButton:{
 homePageContainer:{
   flex:1,
   marginHorizontal:widthScale(31.5),
-  paddingTop:Platform.OS==='ios'?0:20
+  backgroundColor:"white"
+  // paddingTop:Platform.OS==='ios'?0:20
 },
 
 

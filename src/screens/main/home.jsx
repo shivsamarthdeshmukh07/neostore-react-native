@@ -96,7 +96,7 @@ const IconView =memo( ({icon, name,productId=1,iconfocus}) => {
           {icon}
         </View>
       </View>
-      <Text>{name}</Text>
+      <Text style={{color:'black'}}>{name}</Text>
     </TouchableWithoutFeedback>
   );
 });
@@ -128,7 +128,7 @@ const sofaIcon = <Icon2 name={'sofa'} size={25} color={sofa?"white":"gray"} />;
         .catch(e => console.log('error--', e));
     }
     //  console.log('token',data.data.access_token)
-    const getuserData = useCallback(async () => {
+    const getuserData = async () => {
       await axios({
         method: 'GET',
         url: 'http://staging.php-dev.in:8844/trainingapp/api/users/getUserData',
@@ -140,7 +140,7 @@ const sofaIcon = <Icon2 name={'sofa'} size={25} color={sofa?"white":"gray"} />;
       })
         .then(res =>dispatch(addUser(res.data.data)))
         .catch(e => console.log('get data error',data.data.access_token));
-    })
+    }
 
 
 
@@ -152,13 +152,21 @@ const sofaIcon = <Icon2 name={'sofa'} size={25} color={sofa?"white":"gray"} />;
     const [datas,setData]=useState([])
     useEffect(()=>{fetchData()
     },[productId])
-    useEffect(()=>{getuserData()},[])
+    // useEffect(()=>{getuserData()},[])
 
-   
+    useEffect(() => {
+      const unsubscribe = navigation.addListener('focus', () => {
+        getuserData()
+       
+        console.log("hiiiiii")
+        console.log("datttttttt",data)
+      });
+      return unsubscribe;
+    }, [navigation]);
   
 
 
-console.log("datttttttt",datas)
+console.log("datttttttt",data.userData)
   return (
    <SafeAreaView style={globalStyles.homePageContainer}>
     <View
@@ -169,7 +177,7 @@ console.log("datttttttt",datas)
      marginBottom: heightScale(15),
    }}>
    <Pressable onPress={() => navigation.openDrawer()}>{menu}</Pressable>
-   <Text style={{fontSize: 20, fontWeight: 'bold'}}>NeoStoe</Text>
+   <Text style={{fontSize: 20, fontWeight: 'bold',color:"black"}}>NeoStoe</Text>
    {wishlistIcon}
  </View>
    <ScrollView showsVerticalScrollIndicator={false}>
@@ -191,11 +199,11 @@ console.log("datttttttt",datas)
  <Carousal images={images} carouselheight={175} paginationheight={150}/>
 
  <View style={{flexDirection:"row",justifyContent:"space-between",marginTop:heightScale(15),marginBottom:heightScale(20)}}>
- <Text style={{fontSize:20,fontWeight:'500',}} >Feature Product</Text>
+ <Text style={{fontSize:20,fontWeight:'500',color:'black'}} >Feature Product</Text>
  <Pressable
    onPress={()=>navigation.navigate("gallery",{productId})}
  >
- <Text style={{fontSize:14,fontWeight:'200',marginTop:heightScale(5)}} >show all</Text>
+ <Text style={{fontSize:14,fontWeight:'200',marginTop:heightScale(5),color:'black'}} >show all</Text>
 
  </Pressable>
  </View>
@@ -208,8 +216,8 @@ console.log("datttttttt",datas)
       onPress={()=>navigation.navigate("details",{id:item.id})}
    style={{height:heightScale(208),width:widthScale(157)}}>
              <Image style={{height:heightScale(149),width:widthScale(141),resizeMode:'stretch',alignSelf:"center"}} source={{uri:`${item.product_images}`}}/> 
-             <Text numberOfLines={1} style={{marginLeft:widthScale(7),marginTop:heightScale(8),fontSize:fontScale(14)}}>{item.name}</Text> 
-             <Text  style={{marginLeft:widthScale(7),marginTop:heightScale(8),fontWeight:"800"}}>${item.cost}</Text> 
+             <Text numberOfLines={1} style={{marginLeft:widthScale(7),marginTop:heightScale(8),fontSize:fontScale(14),color:'black'}}>{item.name}</Text> 
+             <Text  style={{marginLeft:widthScale(7),marginTop:heightScale(8),fontWeight:"800",color:'black'}}>${item.cost}</Text> 
 
    </Pressable>}
  />

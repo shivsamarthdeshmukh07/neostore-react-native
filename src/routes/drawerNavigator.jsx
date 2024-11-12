@@ -9,13 +9,19 @@ import Icon from 'react-native-vector-icons/Octicons';
 import Icon1 from 'react-native-vector-icons/FontAwesome';
 import Icon2 from 'react-native-vector-icons/Feather';
 import Icon3 from 'react-native-vector-icons/Ionicons';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import profile from '../screens/main/profile'
+import order from '../screens/main/order'
+import { deleteAddress, deleteUser } from '../redux/neoSlice'
+import { useNavigation } from '@react-navigation/native'
 
 
 
 export default DrawerNavigator=()=>{
     const Drawer = createDrawerNavigator()
     const data = useSelector(state=>state.neoStore.userData)
+    const dispatch = useDispatch()
+    const navigation = useNavigation()
       //  console.log(data.user_data)
       console.log(data.user_data?.profile_pic)
     return(
@@ -30,8 +36,8 @@ export default DrawerNavigator=()=>{
                       
                   }
                       <View style={{justifyContent:"space-evenly"}}>
-                        <Text numberOfLines={2} style={{width:widthScale(140),fontSize:fontScale(16),fontWeight:"700"}}>{data.user_data?.first_name} {data.user_data?.last_name}</Text>
-                        <Text style={{fontSize:fontScale(14),fontWeight:"500"}}>{data.user_data?.email}</Text>
+                        <Text numberOfLines={2} style={{width:widthScale(140),fontSize:fontScale(16),fontWeight:"700",color:"black"}}>{data.user_data?.first_name} {data.user_data?.last_name}</Text>
+                        <Text style={{fontSize:fontScale(14),fontWeight:"500",color:"black"}}>{data.user_data?.email}</Text>
 
                       </View>
 
@@ -41,16 +47,16 @@ export default DrawerNavigator=()=>{
                 
                  <DrawerItem
                  icon={()=>(
-                    <Icon name={"home"} size={22} />
+                    <Icon name={"home"} size={22} color={'black'}/>
                  )}
                  style={{width:widthScale(293),height:heightScale(45),paddingLeft:widthScale(18),marginTop:heightScale(55)}}
                  label={"Home page"}
-                 onPress={()=>props.navigation.navigate("Home page")}
+                 onPress={()=>props.navigation.navigate("home")}
                  />
 
                   <DrawerItem
                  icon={()=>(
-                    <Icon name={"search"} size={25} />
+                    <Icon name={"search"} size={25} color={'black'}/>
 
                  )}
                  style={{width:widthScale(293),height:heightScale(45),paddingLeft:widthScale(18),}}
@@ -61,18 +67,18 @@ export default DrawerNavigator=()=>{
                   <DrawerItem
                  icon={()=>(
                     
-                    <Icon2 name={"shopping-bag"} size={25} />
+                    <Icon2 name={"shopping-bag"} size={25} color={'black'}/>
                     
 
                  )}
                  style={{width:widthScale(293),height:heightScale(45),paddingLeft:widthScale(18),}}
                  label={"My order"}
-                 onPress={()=>props.navigation.navigate("Home page")}
+                 onPress={()=>props.navigation.navigate("My order")}
                  />
 
                 <DrawerItem
                  icon={()=>(
-                    <Icon1 name={"user-o"} size={25} />
+                    <Icon1 name={"user-o"} size={25} color={'black'}/>
                   
 
                  )}
@@ -85,7 +91,7 @@ export default DrawerNavigator=()=>{
                  
                  <DrawerItem
                  icon={()=>(
-                    <Icon3 name={"settings-outline"} size={25} />
+                    <Icon3 name={"settings-outline"} size={25} color={'black'}/>
                   
 
                  )}
@@ -96,7 +102,7 @@ export default DrawerNavigator=()=>{
                  
                  <DrawerItem
                  icon={()=>(
-                    <Icon3 name={"mail-outline"} size={25} />
+                    <Icon3 name={"mail-outline"} size={25} color={'black'} />
                   
 
                  )}
@@ -107,13 +113,28 @@ export default DrawerNavigator=()=>{
                  
                  <DrawerItem
                  icon={()=>(
-                    <Icon2 name={"info"} size={25} />
+                    <Icon2 name={"info"} size={25} color={'black'}/>
                   
 
                  )}
                  style={{width:widthScale(293),height:heightScale(45),paddingLeft:widthScale(18),}}
                  label={"About us"}
                  onPress={null}
+                 />
+
+<DrawerItem
+                 icon={()=>(
+                    <Icon2 name={"info"} size={25} color={'black'}/>
+                  
+
+                 )}
+                 style={{width:widthScale(293),height:heightScale(45),paddingLeft:widthScale(18),}}
+                 label={"Log out"}
+                 onPress={()=>{
+                  dispatch(deleteUser())
+                  dispatch(deleteAddress())
+                  navigation.navigate("login")
+                 }}
                  />
                 
                 
@@ -123,8 +144,10 @@ export default DrawerNavigator=()=>{
         >
             <Drawer.Screen  name='Home page' component={tabNavigator}/>
             <Drawer.Screen  name='Discover' component={tabNavigator}/>
-            <Drawer.Screen  name='My order' component={tabNavigator}/>
-            <Drawer.Screen  name='My profile' component={tabNavigator}/>
+            <Drawer.Screen  name='My order' component={order}/>
+            <Drawer.Screen  
+            options={{swipeEnabled:false}}
+            name='My profile' component={profile}/>
             
         </Drawer.Navigator>
     )

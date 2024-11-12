@@ -18,6 +18,8 @@ import search from '../screens/main/search';
 import address from '../screens/main/address';
 import deliveryAddress from '../screens/main/deliveryAddress';
 import checkout from '../screens/main/checkout';
+import orderDatail from '../screens/main/orderDatail';
+import { useSelector } from 'react-redux';
 
 
 
@@ -27,11 +29,16 @@ import checkout from '../screens/main/checkout';
 
 export default Routes=()=>{
     const Stack = createNativeStackNavigator();
-    
+     let initial = "login"
+    const data = useSelector(state => state.neoStore.userData)
+console.log("route page",data.user_data?.access_token)
+    if(data.user_data?.access_token){
+        initial="home"
+    }
      
     return(
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='home'>
+            <Stack.Navigator initialRouteName={initial}>
                 <Stack.Screen options={{headerShown:false}} name='login' component={Login}/>
                 <Stack.Screen options={{headerShown:false}} name='register' component={Register}/>
                   <Stack.Screen options={{headerShown:false}} name='forgotPassword' component={ForgotPassword}/>
@@ -45,6 +52,8 @@ export default Routes=()=>{
                   <Stack.Screen options={{headerShown:false}} name='checkout' component={checkout}/>
                   <Stack.Screen options={{headerShown:false}} name='passwordChangeModal' component={PasswordChangeModal}/>
                   <Stack.Screen options={{headerShown:false}} name='home' component={DrawerNavigator}/>
+                  <Stack.Screen options={{headerShown:false}} name='orderDetail' component={orderDatail}/>
+
 
 
 

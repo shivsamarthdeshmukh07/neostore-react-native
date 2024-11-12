@@ -16,37 +16,39 @@ import { useNavigation } from "@react-navigation/native";
 
 const otherIcon = <Icon4 name={'map-marker-radius-outline'} size={35}  />;
 const homeIcon = <Icon name={'home-outline'} size={35} />;
-const editIcon = <Icon3 name={'edit'} size={25} color={"gray"}/>;
+const editIcon = <Icon3 name={'edit'} size={25} color={"gray"} />;
 
 const officeIcon = <Icon4 name={'office-building-outline'} size={35} />;
 const cancelIcon = <Icon2 name={'highlight-remove'} size={25} color={"gray"}/>;
 
 
-export default AddressCard = ({item,isSelected, onSelect}) => {
+export default AddressCard = ({item,isSelected, onSelect,border=false}) => {
     const navigation = useNavigation();
     const dispatch = useDispatch()
-console.log(item)    
+console.log('item',item)    
 console.log(isSelected)  
 
     return(
-        <View style={{width:widthScale(315),marginHorizontal:widthScale(33),borderRadius:20,height:heightScale(95),marginBottom:heightScale(25)}}>
-        <View style={{flexDirection:"row",alignItems:"center",height:heightScale(50),width:widthScale(315)}}>
-             <CheckBox
+        <View style={{width:widthScale(315),marginHorizontal:widthScale(33),borderRadius:20,height:heightScale(95),marginBottom:heightScale(25),borderWidth:border?1:0}}>
+        <View style={{flexDirection:"row",alignItems:"center",height:heightScale(50),width:widthScale(315),}}>
+            {border?null: <CheckBox
            style={{height:20,width:20, marginLeft:widthScale(20),marginRight:widthScale(10)}}
            onCheckColor={"black"}
            value={isSelected}
            onValueChange={onSelect}
             onTintColor={"black"}
-            />
-           {item?.type === "Home"?homeIcon:item?.type == "Office"?officeIcon:otherIcon}
+            />}
+<View style={{marginLeft:border?widthScale(20):null}}>
+{item?.type === "Home"?homeIcon:item?.type == "Office"?officeIcon:otherIcon}
 
+</View>
            <View style={{height:heightScale(30),width:widthScale(150),justifyContent:"center"}}>
             <Text style={{fontSize:fontScale(16), color:"gray"}}> Sent To</Text>
             <Text style={{fontSize:fontScale(16)}}> {item?.type}</Text>
             
 
            </View>
-           <View style={{height:heightScale(30),width:widthScale(60),justifyContent:"center",alignItems:"flex-end"}}>
+           <View style={{height:heightScale(30),width:border?widthScale(90):widthScale(60),justifyContent:"center",alignItems:"flex-end"}}>
             {/* <Text style={{fontSize:fontScale(16)}}> edit</Text> */}
             <Pressable 
             onPress={()=>dispatch(deleteAddress(item?.id))}

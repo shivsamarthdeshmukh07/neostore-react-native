@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from 'react'
-import { Image, Pressable, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, Platform, Pressable, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { fontScale, heightScale, widthScale } from '../../assets/constants/metric'
 import Icon3 from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/Feather';
@@ -39,18 +39,20 @@ export default Cart=({navigation})=>{
           .then(res =>{setData(res.data)
             setTotal(res?.data?.total)
             console.log('daaata',res.data)
+           
+
             setSubTotal(res.data?.data[0]?.product?.sub_total)
           })
           .catch(e => console.log('get data error',data.data.access_token));
       }
       console.log("fgdhfgxghch",total)
     console.log("arr",data)
-    useEffect(() => {
-        const unsubscribe = navigation.addListener('focus', () => {
-           getCartItems()
-        });
-        return unsubscribe;
-      }, [navigation,subTotal]);
+    // useEffect(() => {
+    //     const unsubscribe = navigation.addListener('focus', () => {
+    //        getCartItems()
+    //     });
+    //     return unsubscribe;
+    //   }, [navigation,subTotal]);
       useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
            getCartItems()
@@ -88,6 +90,11 @@ return(
                 <CartItem key={item.product_id} item={item} updateTotal={updateTotal}/>
               )
             })}
+             {data.data?null:
+         <Text style={{alignSelf:"center",marginTop:heightScale(220),marginBottom:heightScale(160),fontSize:fontScale(16),fontWeight:"500"}}>Your Cart is Empty Add some products</Text>
+             
+             }
+
             {/* <Text style={{color:'red',fontWeight:'bold'}}>{subTotal}</Text> */}
          <Text style={{marginTop:heightScale(15),marginBottom:heightScale(5),fontSize:fontScale(16),fontWeight:"500"}}>Coupon Code</Text>
          <View style={{flexDirection:"row"}}>
@@ -110,14 +117,15 @@ style={{marginLeft:widthScale(5),marginRight:widthScale(5),height:heightScale(40
          </View>
         </ScrollView>
 
-        <View style={{position:"absolute",top:heightScale(600),width:widthScale(375),paddingHorizontal:widthScale(33),backgroundColor:"white",height:500}}>
+        <View style={{position:"absolute",top:Platform.OS==="ios" ?heightScale(600):heightScale(560),width:widthScale(375),paddingHorizontal:widthScale(33),backgroundColor:"white",height:500}}>
           <View style={{flexDirection:"row",justifyContent:"space-between"}}>
           <Text style={{marginTop:heightScale(15),marginBottom:heightScale(20),fontSize:fontScale(16),fontWeight:"bold"}}>Cart Total</Text>
           <Text style={{marginTop:heightScale(15),marginBottom:heightScale(25),fontSize:fontScale(16),fontWeight:"500"}}>{total}</Text>
 
           </View>
             <TouchableOpacity style={{height:heightScale(45),width:widthScale(320),backgroundColor:"black",borderRadius:15,justifyContent:"center",alignItems:"center"}}
-      onPress={()=>{}}
+      onPress={()=>{navigation.navigate("deliveryAddress")}}
+      disabled={data.data?false:true}
       >
     <Text style={{fontSize:18,color:"white",fontWeight:"600"}}>Proceed to Checkout</Text>
       </TouchableOpacity>

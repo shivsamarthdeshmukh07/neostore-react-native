@@ -2215,6 +2215,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/datetimepicker@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "@react-native-community/datetimepicker@npm:8.2.0"
+  dependencies:
+    invariant: ^2.2.4
+  peerDependencies:
+    expo: ">=50.0.0"
+    react: "*"
+    react-native: "*"
+    react-native-windows: "*"
+  peerDependenciesMeta:
+    expo:
+      optional: true
+    react-native-windows:
+      optional: true
+  checksum: 3adc9346f8948abed246da3bfa3a223e44c2c5903070178a82e583ce6f8273607fe5a542af834b3a27aff81980c555e5f72bf0e87c85e3f00856a0de21525374
+  languageName: node
+  linkType: hard
+
+"@react-native-community/geolocation@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@react-native-community/geolocation@npm:3.4.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 4a1a334de5b8345ee5ca9af987718a4cdd0b401b6d024268330c98736eccd0bebf45fd1d4cb396558f429a4670e5b29da0b5b7ebd4e51ca12972d4b08b55d4bc
+  languageName: node
+  linkType: hard
+
 "@react-native/assets-registry@npm:0.75.4":
   version: 0.75.4
   resolution: "@react-native/assets-registry@npm:0.75.4"
@@ -2664,6 +2693,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/geojson@npm:^7946.0.13":
+  version: 7946.0.14
+  resolution: "@types/geojson@npm:7946.0.14"
+  checksum: ae511bee6488ae3bd5a3a3347aedb0371e997b14225b8983679284e22fa4ebd88627c6e3ff8b08bf4cc35068cb29310c89427311ffc9322c255615821a922e71
+  languageName: node
+  linkType: hard
+
 "@types/graceful-fs@npm:^4.1.3":
   version: 4.1.9
   resolution: "@types/graceful-fs@npm:4.1.9"
@@ -2998,6 +3034,8 @@ __metadata:
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
     "@react-native-community/checkbox": ^0.5.17
+    "@react-native-community/datetimepicker": ^8.2.0
+    "@react-native-community/geolocation": ^3.4.0
     "@react-native/babel-preset": 0.75.4
     "@react-native/eslint-config": 0.75.4
     "@react-native/metro-config": 0.75.4
@@ -3012,12 +3050,19 @@ __metadata:
     axios: ^1.7.7
     babel-jest: ^29.6.3
     eslint: ^8.19.0
+    geolib: ^3.3.4
     jest: ^29.6.3
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.75.4
     react-native-encrypted-storage: ^4.0.3
+    react-native-flash-message: ^0.4.2
     react-native-gesture-handler: ^2.20.0
+    react-native-get-location: ^5.0.0
+    react-native-image-base64: ^0.1.4
+    react-native-image-crop-picker: ^0.41.4
+    react-native-maps: ^1.18.2
+    react-native-modal-datetime-picker: ^18.0.0
     react-native-ratings: ^8.1.0
     react-native-reanimated: ^3.9.0
     react-native-reanimated-carousel: ^3.5.1
@@ -5276,6 +5321,13 @@ __metadata:
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
   checksum: a7437e58c6be12aa6c90f7730eac7fa9833dc78872b4ad2963d2031b00a3367a93f98aec75f9aaac7220848e4026d67a8655e870b24f20a543d103c0d65952ec
+  languageName: node
+  linkType: hard
+
+"geolib@npm:^3.3.4":
+  version: 3.3.4
+  resolution: "geolib@npm:3.3.4"
+  checksum: b5ca8090effd384fec168a957d89416577a92dcb63aedf361a60794e07051e6f2a98a3c2db64de2dd9114ac22c63fbf9ec67b2f61dbc300292040cbd4387942b
   languageName: node
   linkType: hard
 
@@ -8212,6 +8264,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-flash-message@npm:^0.4.2":
+  version: 0.4.2
+  resolution: "react-native-flash-message@npm:0.4.2"
+  dependencies:
+    prop-types: ^15.8.1
+    react-native-iphone-screen-helper: ^2.0.2
+  peerDependencies:
+    prop-types: ^15.0 || ^16.0
+    react: "*"
+    react-native: "*"
+  checksum: ab1e83db9f75888607cdeac8160194630a3e16f5e16133b6316d595b392b92f1c3b8e597e365636dcf3c622a4a5731753ce24fe9710867335c06ec0d212c5178
+  languageName: node
+  linkType: hard
+
 "react-native-gesture-handler@npm:^2.20.0":
   version: 2.20.0
   resolution: "react-native-gesture-handler@npm:2.20.0"
@@ -8224,6 +8290,68 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: f573bc3717ae0209ff30bf62b95b3c7f11bd97f4797090211bce416c250388f55d1995aac0a7f1bbc99b06223ea64cbeae8d4ef88dcb8c877201b49163ea0e4b
+  languageName: node
+  linkType: hard
+
+"react-native-get-location@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "react-native-get-location@npm:5.0.0"
+  peerDependencies:
+    react-native: ">=0.60"
+  checksum: 69447e1605eae56c9d39844af46d23f74dffc06d376f243226174ae9ff924eb5a20e6b28998d48b7b5b94fd85485ab5d5e53a4d8272d58f56fbce406ecd1d871
+  languageName: node
+  linkType: hard
+
+"react-native-image-base64@npm:^0.1.4":
+  version: 0.1.4
+  resolution: "react-native-image-base64@npm:0.1.4"
+  checksum: 31e4272effbd78a4eb3a6d013d258945698566034b327b5eaf5531d9baae7a2e9a885862573e441bf38137a58309f05101a3481668d6eb77650e8daad8211a1c
+  languageName: node
+  linkType: hard
+
+"react-native-image-crop-picker@npm:^0.41.4":
+  version: 0.41.4
+  resolution: "react-native-image-crop-picker@npm:0.41.4"
+  peerDependencies:
+    react-native: ">=0.40.0"
+  checksum: 56a84330b4c9d9fd8cadd3519a178a610298be3851b6f516b2003c6951934ab23eb8989b36776447a643495c1ee8d712d203169cc50e7296763479e961534c21
+  languageName: node
+  linkType: hard
+
+"react-native-iphone-screen-helper@npm:^2.0.2":
+  version: 2.1.2
+  resolution: "react-native-iphone-screen-helper@npm:2.1.2"
+  peerDependencies:
+    react-native: ">=0.42.0"
+  checksum: 20a59d0596d836b2a98eaedbf83662cbb318998c4de0d378c9a39d2ea33184c578e8aba0731acbc98b47d362b6ef7323b61c664715b011c7c6e39b926557ada7
+  languageName: node
+  linkType: hard
+
+"react-native-maps@npm:^1.18.2":
+  version: 1.18.2
+  resolution: "react-native-maps@npm:1.18.2"
+  dependencies:
+    "@types/geojson": ^7946.0.13
+  peerDependencies:
+    react: ">= 17.0.1"
+    react-native: ">= 0.64.3"
+    react-native-web: ">= 0.11"
+  peerDependenciesMeta:
+    react-native-web:
+      optional: true
+  checksum: 69cb40f01ce8d467e7180399aa09005bd3b0b5427c0a29aef7a23208f02cb1bfd0bf28dcafb7ecc2757f7c5d61d9af6fb8d8a339a10100c9a88a572265a12eea
+  languageName: node
+  linkType: hard
+
+"react-native-modal-datetime-picker@npm:^18.0.0":
+  version: 18.0.0
+  resolution: "react-native-modal-datetime-picker@npm:18.0.0"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@react-native-community/datetimepicker": ">=6.7.0"
+    react-native: ">=0.65.0"
+  checksum: 30d28a8e599c7a36df4c3e93928aa246087edb95a82a98cb1162b045d18db47447c4e28a89190c83a8258f080066531b2b67805a9aeb007b135d62abfccf8c4c
   languageName: node
   linkType: hard
 

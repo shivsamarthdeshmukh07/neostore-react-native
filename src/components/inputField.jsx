@@ -12,13 +12,13 @@ const InputField = memo(({ placeHolder, icon, getDataFromChild, value }) => {
     const eyeIcon = <EyeIcon name={visible ? "eye" : "eye-off"} size={25} color="gray" />;
          // console.log("hiiiiii ")
     return (
-        <View style={{marginBottom: heightScale(10),paddingTop: heightScale(18),width: widthScale(310),borderBottomWidth: 1, borderColor: "#D6D6D6",  }}>
+        <View style={{marginBottom: heightScale(10),paddingTop: heightScale(18),width:placeHolder==="First_name"||placeHolder==="Last_name"? widthScale(140):widthScale(312),borderBottomWidth: 1, borderColor: "#D6D6D6",  }}>
             {isFocus && <Text>{placeHolder}</Text>}
 
                <View style={{ flexDirection: "row" }}>
                 <TextInput
                     value={value}
-                    style={globalStyles.authTextInpunt}
+                    style={[globalStyles.authTextInpunt,{width:placeHolder==="First_name"||placeHolder==="Last_name"?100:"92%"}]}
                     placeholder={isFocus ? "" : placeHolder}
                     secureTextEntry={visible} 
                     placeholderTextColor={"#343536"}
